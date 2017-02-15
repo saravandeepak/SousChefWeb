@@ -1,0 +1,167 @@
+<div id="fullscreen_bg" class="fullscreen_bg"/>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-lg-offset-1 col-md-9 col-md-offset-1 col-sm-9 col-md-offset-1 col-xs-11  user-tab-container">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 user-tab-menu">
+              <ul class="list-group">
+                <a href="#" class="list-group-item active">
+                    <i class="fa fa-address-book-o fa-lg" aria-hidden="true"></i> <br/>Welcome<br/>Page
+                  </a>
+                <a href="#" class="list-group-item ">
+                    <i class="fa fa-id-card fa-lg" aria-hidden="true"></i><br/>User<br/>Details
+                </a>  
+                <a href="#" class="list-group-item ">
+                    <i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i><br/> My<br/>Orders
+                </a>
+                <a href="#" class="list-group-item" onlclick="canvasinit()">
+                  <i class="glyphicon glyphicon-wrench"></i> <br/>My<br/>Draw<br/>Area
+                </a>
+              </ul>
+            </div>
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 user-tab">
+                <!-- flight section -->
+                <div class="user-tab-content active">
+                    <div class="text-center jumbotron">
+                      
+                      <h2>Welcome</h2>
+                        <strong>{{user.name}}</strong><br/>
+                        <div>
+                            <img id="dp" src="../img/userpagedefault.png" alt="userpic">
+                        </div>
+                        <div id="changedp" class="img-fluid">
+                            <span class="btn btn-default btn-primary btn-xs btn-file">Change Pic
+                                <input id="dpinput" type="file" accept= "image/*" class="form-control" >
+                            </span>
+                        </div>
+                    </div>
+                </div>
+              
+              
+                <div class="user-tab-content">
+                    <div class="text-center">
+
+                <div class="panel panel-default">
+                <div class="panel-body">
+                    <h3 class="text-center">
+                        User Information</h3>
+                    <form id="userdetailform" class="form form-userdetails" role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon">Name</span>
+                                <input type="text" class="form-control" placeholder="Name" id="name" ng-model="user.name" />
+                                <span class="errormessage"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                                <input type="Text" class="form-control" placeholder="Email" id="email" ng-model="user.email" />
+                                <span class="errormessage"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> Street 1</span>
+                                <input type="Text" class="form-control" placeholder="Address Street 1" ng-model="user.addressLine1" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> Street 2</span>
+                                <input type="Text" class="form-control" placeholder="Address Street 2" ng-model="user.addressLine2" />
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> City</span>
+                                <input type="Text" class="form-control" placeholder="City" ng-model="user.city" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> Zipcode</span>
+                                <input type="Text" class="form-control" placeholder="Zipcode" id="zipcode" ng-model="user.zipcd" />
+                                <span class="errormessage"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-address-card" aria-hidden="true"></i> State</span>
+                                <input type="Text" class="form-control" placeholder="State" ng-model="user.state" />
+                            </div>
+                        </div>
+
+                        <a id="edituser" ng-href="#" class="btn btn-sm btn-primary" role="button">
+                            <span class="glyphicon glyphicon-edit"></span>Edit</a> 
+                        <button id="saveuser" class="btn btn-sm btn-primary" role="button">Save</button>
+                        </form>
+                    </div>
+        
+                    </div>
+                </div>
+                </div>
+               
+                <div class="user-tab-content text-center">
+                      <i class="fa fa-shopping-cart fa-4x" aria-hidden="true"></i>
+                      <h2 style="color:#00001a"><a href="" class="btn btn-sm btn-primary btn-block" role="button">My Orders</a></h2>
+                  
+                    <div>
+                        <h5></h5>
+                        <table class="table table-responsive table-striped table-bordered">
+                            <caption>Order1</caption>
+                            <thead style="background-color:#001; color:#fff">
+                                <th>Recipe</th>
+                                <th>Servings</th>
+                                <th>People</th>
+                                <th>Subtotal</th>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in order.order">
+                                    <td>{{item.name}} </td>
+                                    <td>{{item.serving}} </td>
+                                    <td>{{item.people}} </td>
+                                    <td>{{item.subtotal}} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="user-tab-content canvas-space">
+                    <div align="center">
+                            <canvas id="myCanvas" width="500" height="450"></canvas>
+                        <br /><br />
+                        
+                            <button id="clearArea">Clear Area</button>
+                        
+                        
+                            Line width : <select id="selWidth">
+                                <option value="1">1</option>
+                                <option value="5">5</option>   
+                                <option value="9" selected="selected">9</option>
+                                <option value="11">15</option>
+                                <option value="20">20</option>
+                                <option value="26">26</option>
+                                <option value="32">32</option>
+                            </select>
+                        
+                        
+                            Color : <select id="selColor">
+                                <option value="black">black</option>
+                                <option value="#FFB03B" selected="selected">SousChef Color</option>
+                                <option value="red">red</option>
+                                <option value="green">green</option>
+                                <option value="yellow">yellow</option>
+                                <option value="gray">blue</option>
+                            </select>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</div>

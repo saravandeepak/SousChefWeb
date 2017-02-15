@@ -1,0 +1,148 @@
+<style>
+   body{
+   background-color: #000000;
+   background-image:url('img/packagebackground.jpg'); no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   }
+   header {display:block; font-size:1.2em;margin-bottom:100px;}
+   header a, header span {
+   display: inline-block;
+   padding: 4px 8px;
+   margin-right: 10px;
+   border: 2px solid #000;
+   background: #DDD;
+   color: #000;
+   text-decoration: none;
+   text-align: center;
+   height: 20px;
+   }
+   header span {background:white;}
+   a {color: #1155CC;}
+   #iframeId{
+   margin: auto;
+   width: 100%;
+   max-width:800px;
+   }
+   #image-slider{
+   width:1000px;
+   margin:auto 80px 50px;
+   }
+   @media (max-width: 768px) {
+   #iframeId{
+   display:none !important;
+   }
+   #image-slider{
+   display:none !important;
+   }
+   #levelHeader{
+   display:none !important;
+   }
+   }
+</style>
+<!-- Container starts -->
+<br><br>
+<div class="container">
+   <!-- Contaner Starts -->
+   <div class="row-fluid">
+      <!-- Row2 start -->
+      <div class="span3 PlanPricing template4" ng-repeat="packages in packaging">
+         <!-- Price template4 Starts -->
+         <div class="planName">
+            <span class="price" style="color:#FFB03B; font-size:30px">${{packages.price}}</span>
+            <h3>{{packages.name}}</h3>
+            <p>{{packages.plantype}}</p>
+         </div>
+         <div class="planFeatures">
+            <ul>
+               <li><img id="packageImg" ng-src="img/recipes/{{packages.shortname}}.jpg" class="img-responsive" alt=""></li>
+               <li>{{packages.description}}</li>
+            </ul>
+         </div>
+         <p> <a href="#package; return false;" role="button" data-toggle="modal" class="btn btn-success btn-large" style="color:#FFB03B" ng-click="addToCart(packaging.indexOf(packages))">Add to cart </a> </p>
+      </div>
+      <!-- Price template4 Ends -->
+   </div>
+   <!-- Row2 ends -->
+   <br><br> 
+</div>
+<!-- Container ends -->
+<div class="container">
+   <h3 id="levelHeader" style="color:#FFB03B; " class="text-center">Festival special</h3>
+   <div id="iframeId">
+      <iframe frameborder="0" class="juxtapose" width="100%" height="700" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=5142c6a0-beae-11e6-bd02-0edaf8f81e27"></iframe>
+   </div>
+   <!--start-->
+   <div id="image-slider" class="col-xs-10 col-xs-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+      <div id="ninja-slider" style="float:left;">
+         <div class="slider-inner">
+            <ul>
+               <li><a class="ns-img" href="img/thumbs/1.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/2.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/3.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/4.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/5.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/6.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/7.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/8.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/9.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/10.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/11.jpg"></a></li>
+               <li><a class="ns-img" href="img/thumbs/12.jpg"></a></li>
+            </ul>
+            <div class="fs-icon" title="Expand/Close"></div>
+         </div>
+      </div>
+      <div id="thumbnail-slider" style="float:left;">
+         <div class="inner">
+            <ul>
+               <li><a class="thumb" href="img/thumbs/1.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/2.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/3.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/4.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/5.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/6.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/7.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/8.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/9.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/10.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/11.jpg"></a></li>
+               <li><a class="thumb" href="img/thumbs/12.jpg"></a></li>
+            </ul>
+         </div>
+      </div>
+      <div style="clear:both;"></div>
+   </div>
+   <!--end-->
+   <br><br>
+</div>
+<!-- meal gallery ends-->
+<footer class="bg-light-gray">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Sous Chef 2016</span>
+         </div>
+         <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+               <li><a href="#"><i class="fa fa-twitter"></i></a>
+               </li>
+               <li><a href="#"><i class="fa fa-facebook"></i></a>
+               </li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a>
+               </li>
+            </ul>
+         </div>
+         <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+               <li><a href="#">Privacy Policy</a>
+               </li>
+               <li><a href="#">Terms of Use</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</footer>

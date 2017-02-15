@@ -1,0 +1,129 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) return;
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+   fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+   
+</script>
+<style>
+   body{
+   background-color: #000000;
+   background-image:url('img/missionBackground.png'); no-repeat center center fixed; 
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   }
+   #pageHeader{
+   margin-top: 100px;
+   margin-left: 100px;
+   margin-bottom: 0;
+   }
+   .juxtapose {
+   max-width: 600px;
+   }
+   .jx-slider {
+   margin-top: 1em;
+   }
+   #piechart{
+   margin-left:290px;
+   width: 900px; height: 500px;
+   }
+   
+   @media (max-width: 768px) {
+   #fbplug{
+   display:none !important;
+   }
+   #piechart{
+   display:none !important;
+   }
+   }
+   #piechart{
+   backgroundColor: {
+        fill:'red'     
+        }
+   }
+</style>
+<section id="pageHeader">
+   <div class="page-header">
+      <h1 style="color:#FFB03B">The mission of art is to represent nature not to imitate her</h1>
+   </div>
+</section>
+<div class="container">
+   <div class="jumbotron" style="background-image:url('img/wood-wallpaper-20.jpg')">
+      <h3>Anyone can cook and our mission is to make home cooking fun and accesible</h3>
+   </div>
+</div>
+<!--Div that will hold the pie chart-->
+<div id="piechart"></div>
+<div class="container">
+   <div class="row">
+      <h2 style="color:#FFB03B">Mission Statements</h2>
+   </div>
+</div>
+<div class="container">
+<div class="carousel-reviews broun-block">
+   <div class="container">
+      <div class="row">
+         <div id="carousel-reviews" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="item active" ng-repeat="missionState in missionQuotes">
+                  <div class="col-md-3 col-sm-6">
+                     <div class="block-text rel zmin">
+                        <h4>{{missionState.stateHead}}</h4>
+                        <p>{{missionState.statement}}</p>
+                        <ins class="ab zmin sprite sprite-i-triangle block"></ins>
+                     </div>
+                     <div class="person-text rel">
+                        <img ng-src="img/team/{{missionState.missionImage}}.jpg" class="img-thumbnail img-responsive" alt=""/>
+                        <a title="" href="#" style="color:crimson">{{missionState.missionName}}</a>
+                        <i style="color:#7d4702">{{missionState.fromPlace}}</i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
+<br><br><br>
+<div id="fbplug"class="container">
+<div style="margin-left: 340px">
+   <div class="fb-page" data-href="https://www.facebook.com/Sous-Chef-Fun-home-cooking-214112429040597/?skip_nax_wizard=true" data-tabs="timeline" data-width="500" data-height="500" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+      <blockquote style="border-left:0px" cite="https://www.facebook.com/Sous-Chef-Fun-home-cooking-214112429040597/?skip_nax_wizard=true" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Sous-Chef-Fun-home-cooking-214112429040597/?skip_nax_wizard=true">Sous Chef: Fun home cooking</a></blockquote>
+   </div>
+   <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FSous-Chef-Fun-home-cooking-214112429040597%2F%3Fskip_nax_wizard%3Dtrue&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="500" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+</div>
+</div>
+<br><br><br><br>
+<footer class="bg-light-gray">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-4">
+            <span class="copyright">Copyright &copy; Sous Chef 2016</span>
+         </div>
+         <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+               <li><a href="#"><i class="fa fa-twitter"></i></a>
+               </li>
+               <li><a href="#"><i class="fa fa-facebook"></i></a>
+               </li>
+               <li><a href="#"><i class="fa fa-linkedin"></i></a>
+               </li>
+            </ul>
+         </div>
+         <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+               <li><a href="#">Privacy Policy</a>
+               </li>
+               <li><a href="#">Terms of Use</a>
+               </li>
+            </ul>
+         </div>
+      </div>
+   </div>
+</footer>

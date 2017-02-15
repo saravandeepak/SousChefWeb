@@ -1,0 +1,30 @@
+[
+  {
+    "stateHead":"We’re developing a more sustainable food system",
+    "statement":"We support farmers who use regenerative farming practices that help build healthy soil for future generations. By protecting natural resources, encouraging biodiversity and utilizing integrated pest management, our farmers grow the best quality produce with minimal fertilizers and pesticides, and reduce carbon emissions. 0% of food in America is wasted, and the production of this wasted food is a major contributor to greenhouse gas emissions. We plan our meals in advance and source directly from our suppliers, so food doesn’t spoil on the shelves of warehouses or at grocery stores.",
+    "missionName":"Rohan M",
+    "fromPlace":"from Boston, MA",
+	"missionImage":"rohan"
+  },
+  {
+    "stateHead":"We’re setting the highest standards for our ingredients",
+    "statement":"Our farmers and ranchers raise animals without any added hormones or sub-therapuetic antibiotoics. In the rare event that one of our animals becomes ill and cannot recover without antibiotics, our animal welfare standards allow for the animals to be treated.  Many consumers also rely on manufacturing and processing standards, particularly to know what ingredients are present, due to dietary, nutritional requirements (kosher, halal, vegetarian), or medical conditions (e.g., diabetes, or allergies). So the maintanance of high standards is the way to go for us for being successfull.",
+    "missionName":"Rohan J",
+    "fromPlace":"from Boston, MA",
+	"missionImage":"rohanJ"
+	},
+  {
+    "stateHead":"We’re building a community of home chefs",
+    "statement":"We believe you’re never done learning in the kitchen. Our recipes are created to encourage our home chefs to try new ingredients and cooking techniques every week, while honoring our philosophy of seasonal eating.  We take great care to ensure that our recipes are suitable for beginner chefs and experts alike. We believe that cooking together builds stronger family bonds, is good for society and promotes a healthier diet. We’re working to create cooking experiences that are fun for the whole family and that will inspire a new generation of home chefs. So we add recipes from users.",
+    "missionName":"Saravan",
+    "fromPlace":"from Boston, MA",
+	"missionImage":"saravan"
+	},
+  {
+    "stateHead":"Hygience is of paramount importance for our food system",
+    "statement":"Hygiene is probably the second most important aspect of running a restaurant, coming second to food quality. Restaurants with bad hygiene are sure to fail because even if you try to hide the dirty secrets, they will eventually be found out and through word of mouth, the news will spread, affecting your reputation. There are many dangers that unhygienic food preparation can bring. It could bring about disease or food poisoning to valued customers. Proper hygiene in the restaurant would help you gain trust from customers, boosting your chances for success.",
+    "missionName":"Vaishak",
+    "fromPlace":"from Boston, MA",
+	"missionImage":"vaishak"
+	}  
+]

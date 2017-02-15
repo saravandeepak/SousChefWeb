@@ -1,0 +1,26 @@
+{
+  "name": "souschefweb",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Saravan Deepak Vadivel <vadivel.s@husky.neu.edu>"
+  ],
+  "license": "ISC",
+  "homepage": "public/index.html",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+        "bootstrap": "latest",
+        "font-awesome": "latest",
+        "animate.css": "latest",
+        "angular": "latest",
+        "angular-route": "latest"   
+    }
+}

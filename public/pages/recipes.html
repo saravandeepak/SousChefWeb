@@ -1,0 +1,183 @@
+<style>
+    body{
+        background-color: black;
+    }
+    .recipeitems{
+        width:400px;
+        float: left;
+    }
+    #portfolio{
+        margin-top: 100px;
+        background-image: url(../img/menubackground.jpg);
+    }
+    .modal-content{
+        background-color: rgba(0,0,0,0.5);
+    }
+    .modal-body h2{
+        color: #FFB03B;
+    }
+    #modal-table thead{
+        text-align: center;
+        background-color: black;
+        color: white;
+        font-weight: 500;
+    }
+    #modal-table tbody{
+        text-align: left;
+        background: #FFB03B;
+        color: white;
+    }
+    #modal-table {
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    .close-modal{
+        color: #FFB03B;
+    }
+
+    .modal-body p{
+        color: #FFB03B;
+    }
+    #messageSuccess{
+        
+        color: #FFB03B;
+    }
+
+    #searchrecipe .input-group-addon{
+
+        color: #FFB03B;
+    }
+    .cuisines>h3{
+        color: white;
+    }
+    
+</style>
+
+
+<section id="portfolio" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Menu</h2>
+                <h3 class="section-subheading text-muted">Look at our recipies</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-offset-9 col-sm-3 col-md-offset-9 col-md-3 text-center">
+                <form id="searchrecipe" class="navbar-form" role="search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search" name="search" ng-model="search.name">
+                        <div class="input-group-addon">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr/>
+        <div ng-repeat= "cuisine in cuisines" >
+            <div class= "cuisines" id="{{cuisine}}">
+                <h3 ng-model="cuisine.cuisine">{{cuisine}}</h3>
+                <hr/>
+            </div>
+            <div class="row"  >
+                <div class="col-md-4 col-sm-6 portfolio-item" ng-repeat="item in recipes | filter:cuisine | filter:search">
+                    <a ng-href="/recipes/#recipemodal{{recipes.indexOf(item)}}" class="portfolio-link" data-toggle="modal">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-cutlery fa-3x" aria-hidden="true"></i>
+                                <p>See ingredients and price</p>
+                            </div>
+                        </div>
+                        <img ng-src="img/recipes/{{item.shortname}}.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{item.name}}</h4>
+                        <p class="text-muted">{{item.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="portfolio-modal modal fade" id="recipemodal{{recipes.indexOf(item)}}" tabindex="-1" role="dialog" aria-hidden="true" ng-repeat="item in recipes" >
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="modal-body">
+                                <!-- Project Details Go Here -->
+                                <h2>{{item.name}}</h2>
+                                <p class="item-intro text-muted">{{item.description}}</p>
+                                <img class="img-responsive img-centered" ng-src="img/recipes/{{item.shortname}}.jpg" alt="">
+                                <p>Price: {{item.price}}$</p>
+                                <table id="modal-table" class="table">                                     
+                                    <thead class="thead-default">
+                                      <tr>
+                                        <th >Ingredient name</th>
+                                        <th >Quantity</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      <tr ng-repeat="ingredients in item.ingredients">
+                                        <td>{{ingredients.ingredientname}}</td>
+                                        <td>{{ingredients.qty}}</td>
+                                      </tr>
+                                      </tbody>
+                                </table>
+
+                                <div id="messageSuccess" ng-show="itemAdded">
+                                    <h5>Yaay! Item added to cart!</h5>
+                                </div>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                                <button type="button" class="btn btn-primary" ng-click="addToCart(recipes.indexOf(item))"><i class="fa fa-plus-circle"></i> Add to Cart</button>
+                                <br/>
+                                <br/>
+                                <div id="howtovideo" class="col-lg-10 col-lg-offset-1 text-center">
+                                    <h3>How to video</h3>
+                                    <div class="video-container">
+                                        <iframe ng-src="https://www.youtube.com/embed/F6ehyV7kqv8" height="315" width="560" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<footer class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Sous Chef 2016</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#privacypolicy">Privacy Policy</a>
+                        </li>
+                        <li><a href="#terms">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
